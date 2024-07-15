@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, url_for
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -65,7 +65,7 @@ def heatmap():
     plt.title('Heatmap of Raw Strengths Data')
     img_tag = plot_to_img_tag()
     plt.close()
-    return render_template('index.html', img_tag=img_tag)
+    return render_template('heatmap.html', img_tag=img_tag)
 
 
 @app.route('/correlation_matrix')
@@ -77,7 +77,7 @@ def correlation_matrix():
     plt.title('Correlation Matrix')
     img_tag = plot_to_img_tag()
     plt.close()
-    return render_template('index.html', img_tag=img_tag)
+    return render_template('correlation_matrix.html', img_tag=img_tag)
 
 
 @app.route('/factor_analysis')
@@ -96,7 +96,7 @@ def factor_analysis():
     plt.title('Factor Analysis of Team Activities')
     img_tag = plot_to_img_tag()
     plt.close()
-    return render_template('index.html', img_tag=img_tag)
+    return render_template('factor_analysis.html', img_tag=img_tag)
 
 
 @app.route('/performance_distribution')
@@ -110,7 +110,7 @@ def performance_distribution():
     plt.ylabel('Frequency')
     img_tag = plot_to_img_tag()
     plt.close()
-    return render_template('index.html', img_tag=img_tag)
+    return render_template('performance_distribution.html', img_tag=img_tag)
 
 
 def calculate_performance_score(row, weights):

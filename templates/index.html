@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Activity Visualization</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Team Activity Visualization</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/heatmap">Heatmap</a></li>
-            <li><a href="/correlation_matrix">Correlation Matrix</a></li>
-            <li><a href="/factor_analysis">Factor Analysis</a></li>
-            <li><a href="/performance_distribution">Performance Distribution</a></li>
-        </ul>
-    </nav>
-    <div>
-        {% if img_tag %}
-            <img src="{{ img_tag }}" alt="Visualization">
-        {% endif %}
-    </div>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+<p>Welcome to the Team Activity Visualization dashboard. Use the navigation bar to view different visualizations.</p>
+{% endblock %}
